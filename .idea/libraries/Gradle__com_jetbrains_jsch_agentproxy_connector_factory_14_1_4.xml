@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jetbrains:jsch.agentproxy.connector-factory:14.1.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/14.1.4/e1a65bb05a50274b0aea828df954df82296eecce/ideaIC-14.1.4/lib/jsch.agentproxy.connector-factory.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/14.1.4/f5169c4a780da12ca4eec17553de9f6d43a49d52/ideaIC-14.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

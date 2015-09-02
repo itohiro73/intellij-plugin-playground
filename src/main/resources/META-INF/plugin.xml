@@ -1,17 +1,15 @@
 <idea-plugin version="2">
   <id>com.yourcompany.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <name>Search It</name>
   <version>1.0</version>
   <vendor email="dummy" url="dummy">itohiro73</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      Search plugin.<br>
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+      Release 0.0.1: Initial release.<br>
     ]]>
   </change-notes>
 
