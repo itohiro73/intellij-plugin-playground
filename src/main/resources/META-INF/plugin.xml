@@ -23,20 +23,16 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
     <toolWindow id="search" anchor="bottom" factoryClass="jp.itohiro.intellij.sample.SearchWindow"/>
   </extensions>
 
   <application-components>
-    <!-- Add your application components here -->
   </application-components>
 
   <project-components>
-    <!-- Add your project components here -->
   </project-components>
 
   <actions>
-    <!-- Add your actions here -->
   </actions>
 
 </idea-plugin>
