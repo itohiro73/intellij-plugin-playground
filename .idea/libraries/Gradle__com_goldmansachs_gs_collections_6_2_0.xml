@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.goldmansachs:gs-collections:6.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.goldmansachs/gs-collections/6.2.0/dc11dc5674743983fedeef265d5c4fb847a7548d/gs-collections-6.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.goldmansachs/gs-collections/6.2.0/d93b21dbbfefc63e767483c2b6b7742aa2d0c6eb/gs-collections-6.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
