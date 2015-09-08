@@ -22,5 +22,6 @@ dependencies {
     compile 'com.goldmansachs:gs-collections-api:6.2.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.3.4'
     compile 'com.google.http-client:google-http-client-jackson:1.20.0'
+    compile 'com.googlecode.stackexchange:stackoverflow-java-sdk:2.2.0'
     testCompile 'junit:junit:4.12'
 }

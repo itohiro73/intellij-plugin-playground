@@ -1,4 +1,4 @@
-package jp.itohiro.intellij.sample;
+package jp.itohiro.intellij.sample.ui;
 
 import javax.swing.*;
 

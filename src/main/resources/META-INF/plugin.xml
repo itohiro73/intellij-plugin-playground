@@ -23,7 +23,7 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="search" anchor="bottom" factoryClass="jp.itohiro.intellij.sample.SearchWindow"/>
+    <toolWindow id="search" anchor="bottom" factoryClass="jp.itohiro.intellij.sample.ui.SearchWindow"/>
   </extensions>
 
   <application-components>

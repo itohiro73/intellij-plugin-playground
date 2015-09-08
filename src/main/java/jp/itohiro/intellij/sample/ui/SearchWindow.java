@@ -1,9 +1,14 @@
-package jp.itohiro.intellij.sample;
+package jp.itohiro.intellij.sample.ui;
 
+import com.gs.collections.api.list.ImmutableList;
+import com.gs.collections.impl.factory.Lists;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogBuilder;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
+import jp.itohiro.intellij.sample.domain.Qiita;
+import jp.itohiro.intellij.sample.domain.Searchable;
+import jp.itohiro.intellij.sample.domain.StackOverflow;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
@@ -18,16 +23,17 @@ public class SearchWindow implements ToolWindowFactory{
     private JPanel panel;
     private JTable table1;
     private JButton button1;
-    private Searchable searchable;
+    private ImmutableList<Searchable> searchables;
     private SearchConfig searchConfig = new SearchConfig();
 
     public SearchWindow() {
-        searchable = new Qiita(new ResultTable(table1));
+        ResultTable resultTable = new ResultTable(table1);
+        searchables = Lists.immutable.of(new Qiita(resultTable));
         textField1.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    searchable.search(textField1.getText());
+                    searchables.each(searchable -> searchable.search(textField1.getText()));
                 }
             }
         });
