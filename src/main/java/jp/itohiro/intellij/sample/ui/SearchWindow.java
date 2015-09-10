@@ -23,6 +23,7 @@ public class SearchWindow implements ToolWindowFactory{
     private JPanel panel;
     private JTable table1;
     private JButton button1;
+    private JScrollPane jSrollPane;
     private ImmutableList<Searchable> searchables;
     private SearchConfig searchConfig = new SearchConfig();
 

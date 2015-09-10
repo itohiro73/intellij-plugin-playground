@@ -1,6 +1,7 @@
 package jp.itohiro.intellij.sample.ui;
 
 import com.gs.collections.api.list.ImmutableList;
+import com.gs.collections.impl.utility.ArrayIterate;
 import jp.itohiro.intellij.sample.domain.JsonItem;
 
 import javax.swing.*;
@@ -19,10 +20,10 @@ public class ResultTable {
     }
 
     public synchronized void refreshResult(ImmutableList<JsonItem> response){
-        final String[][] tableData = new String[100][20];
-        response.forEachWithIndex(0, response.size()-1, (jsonItem,i) -> tableData[i] = (new String[]{jsonItem.getSite(), jsonItem.getTitle(), jsonItem.getCreateTime()}));
+        final String[][] tableData = new String[response.size()][3];
+        response.forEachWithIndex(0, response.size() - 1, (jsonItem, i) -> tableData[i] = (new String[]{jsonItem.getSite(), jsonItem.getTitle(), jsonItem.getCreateTime()}));
         DefaultTableModel tableModel = (DefaultTableModel)this.table.getModel();
-        tableModel.addRow(tableData);
+        ArrayIterate.forEach(tableData, tableModel::addRow);
         this.table.setModel(tableModel);
     }
 }
