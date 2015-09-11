@@ -29,7 +29,7 @@ public class SearchWindow implements ToolWindowFactory{
 
     public SearchWindow() {
         ResultTable resultTable = new ResultTable(table1);
-        searchables = Lists.immutable.of(new Qiita(resultTable));
+        searchables = Lists.immutable.of(new Qiita(resultTable), new StackOverflow(resultTable));
         textField1.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {

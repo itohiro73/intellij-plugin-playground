@@ -8,7 +8,6 @@ public class SearchConfig {
     private JCheckBox stackOverflowJPCheckBox;
     private JCheckBox qiitaCheckBox;
 
-
     public JPanel getSearchConfigPanel() {
         return searchConfigPanel;
     }

@@ -8,22 +8,21 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class ResultTable {
-    private String columns[] = {
-            "Site", "Title", "Date"
-    };
     JTable table;
 
     public ResultTable(JTable table) {
         this.table = table;
-        DefaultTableModel tableModel = new DefaultTableModel(new String[][]{}, columns);
+        DefaultTableModel tableModel = new DefaultTableModel(new String[][]{}, new String[]{"Site", "Title", "Date"});
         this.table.setModel(tableModel);
     }
 
     public synchronized void refreshResult(ImmutableList<JsonItem> response){
         final String[][] tableData = new String[response.size()][3];
-        response.forEachWithIndex(0, response.size() - 1, (jsonItem, i) -> tableData[i] = (new String[]{jsonItem.getSite(), jsonItem.getTitle(), jsonItem.getCreateTime()}));
-        DefaultTableModel tableModel = (DefaultTableModel)this.table.getModel();
-        ArrayIterate.forEach(tableData, tableModel::addRow);
+        DefaultTableModel tableModel = (DefaultTableModel) this.table.getModel();
+        if(!response.isEmpty()) {
+            response.forEachWithIndex(0, response.size() - 1, (jsonItem, i) -> tableData[i] = (new String[]{jsonItem.getSite(), jsonItem.getTitle(), jsonItem.getCreateTime()}));
+            ArrayIterate.forEach(tableData, tableModel::addRow);
+        }
         this.table.setModel(tableModel);
     }
 }

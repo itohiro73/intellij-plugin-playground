@@ -3,39 +3,41 @@ package jp.itohiro.intellij.sample.domain;
 import com.google.api.client.util.Key;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 public class StackOverflowItem implements JsonItem{
-    private static final String Site = "Stack Overflow";
-
+    private static final String SITE = "Stack Overflow";
     @Key
-    private String title;
-
+    private long last_activity_date;
     @Key
     private long creation_date;
-
     @Key
     private String link;
+    @Key
+    private String title;
+    @Key
+    private Long last_edit_date;
 
-    public String getTitle() {
-        return this.title;
-    }
-
-    public long getCreation_date() {
-        return this.creation_date;
-    }
-
-    public String getLink() {
-        return this.link;
+    public StackOverflowItem() {
     }
 
     @Override
     public String getSite() {
-        return Site;
+        return SITE;
+    }
+
+    @Override
+    public String getTitle() {
+        return this.title;
     }
 
     @Override
     public String getCreateTime() {
-        return LocalDateTime.from(Instant.ofEpochMilli(this.creation_date)).toString();
+        return Instant.ofEpochSecond(this.creation_date)
+                .atZone(ZoneId.systemDefault())
+                .format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
     }
 }

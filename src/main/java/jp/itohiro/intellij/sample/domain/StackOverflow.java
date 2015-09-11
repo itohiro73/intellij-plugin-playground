@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
 public class StackOverflow implements Searchable {
     static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
     static final JsonFactory JSON_FACTORY = new JacksonFactory();
-    private final String SEARCH_URL = "https://api.stackexchange.com/2.2/search/advanced?site=stackoverflow&order=desc&sort=activity&q=intellij";
+    private final String SEARCH_URL = "https://api.stackexchange.com/2.2/search/advanced?site=stackoverflow&order=desc&sort=activity&q=";
     private final ResultTable table;
 
     public StackOverflow(ResultTable table) {
@@ -34,12 +34,12 @@ public class StackOverflow implements Searchable {
                     HTTP_TRANSPORT.createRequestFactory(request
                             -> request.setParser(new JsonObjectParser(JSON_FACTORY)));
 
-            RestUrl url = new RestUrl(SEARCH_URL + searchText, "title,creation_date,link");
+            RestUrl url = new RestUrl(SEARCH_URL + searchText, "items,title,creation_date,link");
             HttpRequest request = null;
             JsonItem[] itemJson = null;
             try {
                 request = requestFactory.buildGetRequest(url);
-                itemJson = request.execute().parseAs(StackOverflowItem[].class);
+                itemJson = request.execute().parseAs(StackOverflowItems.class).getItems();
             } catch (IOException e) {
                 throw new RuntimeException("Failed create search request", e);
             }
