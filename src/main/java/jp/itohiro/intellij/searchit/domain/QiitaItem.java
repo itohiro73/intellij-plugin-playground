@@ -1,7 +1,6 @@
-package jp.itohiro.intellij.sample.domain;
+package jp.itohiro.intellij.searchit.domain;
 
 import com.google.api.client.util.Key;
-import com.intellij.icons.AllIcons;
 
 public class QiitaItem implements JsonItem{
     private static final String SITE = "Qiita";

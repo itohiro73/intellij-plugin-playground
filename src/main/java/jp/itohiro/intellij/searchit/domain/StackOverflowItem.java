@@ -1,10 +1,8 @@
-package jp.itohiro.intellij.sample.domain;
+package jp.itohiro.intellij.searchit.domain;
 
 import com.google.api.client.util.Key;
 
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 

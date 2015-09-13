@@ -1,4 +1,4 @@
-package jp.itohiro.intellij.sample.ui;
+package jp.itohiro.intellij.searchit.ui;
 
 import javax.swing.*;
 

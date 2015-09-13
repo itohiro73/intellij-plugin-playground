@@ -1,6 +1,6 @@
 <idea-plugin version="2">
   <id>com.yourcompany.unique.plugin.id</id>
-  <name>Search It</name>
+  <name>Search II</name>
   <version>1.0</version>
   <vendor email="dummy" url="dummy">itohiro73</vendor>
 
@@ -23,7 +23,7 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="search" anchor="bottom" factoryClass="jp.itohiro.intellij.sample.ui.SearchWindow"/>
+    <toolWindow id="search" anchor="bottom" factoryClass="jp.itohiro.intellij.searchit.ui.SearchWindow"/>
   </extensions>
 
   <application-components>

@@ -1,8 +1,8 @@
-package jp.itohiro.intellij.sample.ui;
+package jp.itohiro.intellij.searchit.ui;
 
 import com.gs.collections.api.list.ImmutableList;
 import com.gs.collections.impl.utility.ArrayIterate;
-import jp.itohiro.intellij.sample.domain.JsonItem;
+import jp.itohiro.intellij.searchit.domain.JsonItem;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

@@ -1,4 +1,4 @@
-package jp.itohiro.intellij.sample.domain;
+package jp.itohiro.intellij.searchit.service;
 
 public interface Searchable {
     void search(String intelliJ);

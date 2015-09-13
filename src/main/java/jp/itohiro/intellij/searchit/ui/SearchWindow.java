@@ -1,14 +1,15 @@
-package jp.itohiro.intellij.sample.ui;
+package jp.itohiro.intellij.searchit.ui;
 
 import com.gs.collections.api.list.ImmutableList;
+import com.gs.collections.impl.block.procedure.checked.ThrowingProcedure;
 import com.gs.collections.impl.factory.Lists;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogBuilder;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
-import jp.itohiro.intellij.sample.domain.Qiita;
-import jp.itohiro.intellij.sample.domain.Searchable;
-import jp.itohiro.intellij.sample.domain.StackOverflow;
+import jp.itohiro.intellij.searchit.service.Qiita;
+import jp.itohiro.intellij.searchit.service.Searchable;
+import jp.itohiro.intellij.searchit.service.StackOverflow;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
@@ -34,7 +35,11 @@ public class SearchWindow implements ToolWindowFactory{
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    searchables.each(searchable -> searchable.search(textField1.getText()));
+                    searchables.each(searchable ->
+                        SwingUtilities.invokeLater(
+                            () -> searchable.search(textField1.getText())
+                        )
+                    );
                 }
             }
         });

@@ -1,4 +1,4 @@
-package jp.itohiro.intellij.sample.domain;
+package jp.itohiro.intellij.searchit.domain;
 
 public interface JsonItem {
     String getSite();

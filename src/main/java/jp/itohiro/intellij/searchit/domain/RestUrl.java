@@ -1,4 +1,4 @@
-package jp.itohiro.intellij.sample.domain;
+package jp.itohiro.intellij.searchit.domain;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.util.Key;
