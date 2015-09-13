@@ -13,6 +13,10 @@ intellij {
     pluginName 'search-it'
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.5'
+}
+
 repositories {
     mavenCentral()
 }
